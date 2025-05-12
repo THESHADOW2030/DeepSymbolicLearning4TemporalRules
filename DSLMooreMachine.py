@@ -6,7 +6,7 @@ import torchvision
 from pygame.transform import threshold
 
 from DeepAutoma import ProbabilisticAutoma, LSTMClassifier, GRUClassifier, TransformerClassifier
-from Classifier import CNN_mnist, CNN_minecraft, MNIST_Net
+from Classifier import CNN_mnist, CNN_minecraft, MNIST_Net, CNN_mario
 from statistics import mean
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 import itertools
@@ -71,8 +71,22 @@ class DSLMooreMachine:
 
             self.num_outputs = 2
 
+
+        elif dataset == 'mario':  #256 x 240
+            self.num_channels = 1
+            self.pixels_h = 256
+            self.pixels_v = 240
+            nodes_linear = 256
+            self.classifier = CNN_mario(self.num_channels, self.numb_of_symbols, nodes_linear)
+
+
+            self.num_outputs = 12
+
+
+
+
         else:
-            sys.exit("INVALID DATASET. Choices available: ['MNIST', 'minecraft']")
+            sys.exit("INVALID DATASET. Choices available: ['MNIST', 'minecraft', 'MARIO']")
 
         #################### networks
         self.hidden_dim =num_of_states
