@@ -49,8 +49,8 @@ class CNN_minecraft(nn.Module):
     
 
 class CNN_mario(nn.Module):
-    def __init__(self, channels, classes):
-        super(CNN_minecraft, self).__init__()
+    def __init__(self, channels, classes, nodes_linear):
+        super(CNN_mario, self).__init__()
         self.conv1 = nn.Conv2d(channels, 5, kernel_size=5)
         self.conv2 = nn.Conv2d(5, 5, kernel_size=5)
         self.conv2_drop = nn.Dropout2d()
