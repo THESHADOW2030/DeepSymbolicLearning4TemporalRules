@@ -190,7 +190,7 @@ class DSLMooreMachine:
         classification_temperature = 0.5
 
         for epoch in range(num_of_epochs):
-            print("epoch: ", epoch)
+            #print("epoch: ", epoch)
             loss_values = []
             temp = max(temp*decay, min_temp)
             for i in range(len(self.train_img_seq)):
@@ -222,7 +222,7 @@ class DSLMooreMachine:
                 loss_values.append(loss.item())
 
             new_loss =  mean(loss_values)
-            print("loss: ", new_loss)
+            #print("loss: ", new_loss)
             #scheduler.step(mean(loss_values))
 
             train_accuracy, test_accuracy_clss, test_accuracy_aut, test_accuracy_hard = self.eval_automa_acceptance(automa_implementation=self.automa_implementation)

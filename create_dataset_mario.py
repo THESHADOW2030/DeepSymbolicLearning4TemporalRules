@@ -11,6 +11,8 @@ import shutil
 
 from tqdm import tqdm
 
+import random
+
 
 def move_dataset_to_right_folder():
 
@@ -72,6 +74,83 @@ def move_dataset_to_right_folder():
 
     print(label_mapping)
     print("Number of unique labels:", len(unique_labels))
+
+
+import os
+import random
+
+import os
+import random
+import math
+
+def balance_labels():
+    directory = "./Observations/"
+    label_episode_files = {}  # {label: {episode: [file_paths]}}
+
+    # Step 1: Collect files grouped by label and episode
+    for episode in os.listdir(directory):
+        episode_path = os.path.join(directory, episode)
+        if not os.path.isdir(episode_path):
+            continue
+
+        for file in os.listdir(episode_path):
+            if "_" not in file or "." not in file:
+                continue
+            try:
+                label = int(file.split("_")[1].split(".")[0])
+            except ValueError:
+                continue
+
+            label_episode_files.setdefault(label, {}).setdefault(episode, []).append(
+                os.path.join(episode_path, file)
+            )
+
+    # Step 2: Calculate label totals
+    label_totals = {label: sum(len(files) for files in episodes.values())
+                    for label, episodes in label_episode_files.items()}
+    print("Original label distribution:", label_totals)
+
+    # Step 3: Get minimum count for balancing
+    min_count = min(label_totals.values())
+    print("Balancing to minimum count per label:", min_count)
+
+    # Step 4: Proportional deletions across episodes
+    for label, episodes in label_episode_files.items():
+        total = label_totals[label]
+        excess = total - min_count
+        if excess <= 0:
+            continue  # Already balanced
+
+        print(f"\nBalancing label {label}, need to delete {excess} samples")
+
+        # Compute how many to delete from each episode
+        deletions = {}
+        for episode, files in episodes.items():
+            proportion = len(files) / total
+            deletions[episode] = math.floor(proportion * excess)
+
+        # Adjust for rounding issues (ensure total deletions == excess)
+        to_adjust = excess - sum(deletions.values())
+        if to_adjust > 0:
+            # Distribute remaining deletions randomly to episodes with highest count
+            sorted_eps = sorted(episodes.items(), key=lambda x: len(x[1]), reverse=True)
+            for i in range(to_adjust):
+                ep = sorted_eps[i % len(sorted_eps)][0]
+                deletions[ep] += 1
+
+        # Step 5: Perform deletions
+        for episode, count in deletions.items():
+            files = episodes[episode]
+            if count > 0:
+                random.shuffle(files)
+                for f in files[:count]:
+                    os.remove(f)
+                    print(f"Deleted {f}")
+
+    print("\nBalancing complete.")
+
+
+
 
 
 def loadMarioDataset_balanced_labels(root_dir, num_outputs=5, transform=None):
@@ -258,7 +337,7 @@ def loadMarioDataset_balanced_labels(root_dir, num_outputs=5, transform=None):
 
 if __name__ == "__main__":
 
-    #move_dataset_to_right_folder()
-
+    move_dataset_to_right_folder()
+    balance_labels()
 
     pass
