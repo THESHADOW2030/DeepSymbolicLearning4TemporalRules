@@ -17,8 +17,8 @@ from tqdm import tqdm
 from contextlib import redirect_stdout
 
 #flags
-absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 5, "number of symbols used to initialize the model")
-absl.flags.DEFINE_integer("NUM_OF_STATES", 50, "number of states used to initialize the model") #TODO: rimettere a 25
+absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 25, "number of symbols used to initialize the model")
+absl.flags.DEFINE_integer("NUM_OF_STATES", 100, "number of states used to initialize the model") #TODO: rimettere a 25
 
 absl.flags.DEFINE_string("LOG_DIR", "Results_mario/", "path to save the results")
 absl.flags.DEFINE_string("PLOTS_DIR", "Plots_mario/", "path to save the plots")
@@ -101,11 +101,11 @@ def main(argv):
             print("formula = {},\texperiment = {}".format(formula_name, i))
             #with open(os.devnull, 'w') as fnull, redirect_stdout(fnull):
             #DeepDFA
-            #test_method("logic_circuit", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, automata_dir=FLAGS.AUTOMATA_DIR, models_dir=FLAGS.MODELS_DIR)
+            test_method("logic_circuit", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, automata_dir=FLAGS.AUTOMATA_DIR, models_dir=FLAGS.MODELS_DIR)
             #lstm
-            #test_method("lstm", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
+            test_method("lstm", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
             #gru
-            #test_method("gru", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
+            test_method("gru", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
             #transformers
             test_method("transformer", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
     plot_results(formula, formula_name, res_dir = FLAGS.LOG_DIR,num_exp=num_exp, plot_legend=True, plot_dir= FLAGS.PLOTS_DIR, aut_dir=FLAGS.AUTOMATA_DIR, state_count=6, symbol_count=4)

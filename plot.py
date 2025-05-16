@@ -141,13 +141,13 @@ def plot_results(formula_name, plot_title, res_dir='Results/', num_exp=2, plot_l
         f.write(f"_______{formula_name} only_state_mode_______\n")
         f.write(f"state distance: {mean(state_distances)}+-{stdev(state_distances)}\n")
         f.write(f"num symbols: {mean(sym_counts)}+-{stdev(sym_counts)}\n\n")
-        f.write(f"state distance: {median(state_distances)}+-{mad(state_distances)}\n")
+        #f.write(f"state distance: {median(state_distances)}+-{mad(state_distances)}\n")
         f.write(f"num symbols: {median(sym_counts)}+-{mad(sym_counts)}\n\n")
 
         f.write(f"_______{formula_name} full_mode_______\n")
         f.write(f"state_distance: {mean(state_distances_full)}+-{stdev(state_distances_full)}\n")
         f.write(f"num symbols: {mean(sym_counts_full)}+-{stdev(sym_counts_full)}\n\n")
-        f.write(f"state_distance: {median(state_distances_full)}+-{mad(state_distances_full)}\n")
+        #f.write(f"state_distance: {median(state_distances_full)}+-{mad(state_distances_full)}\n")
         f.write(f"num symbols: {median(sym_counts_full)}+-{mad(sym_counts_full)}\n\n")
 
     ############# eliminate outlayers DL
