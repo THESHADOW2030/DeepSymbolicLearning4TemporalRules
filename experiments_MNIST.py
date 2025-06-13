@@ -13,8 +13,8 @@ from plot import plot_results, plot_results_all_formulas, state_distance_one_for
 import os
 
 #flags
-absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 5, "number of symbols used to initialize the model")
-absl.flags.DEFINE_integer("NUM_OF_STATES", 25, "number of states used to initialize the model") #TODO: rimettere a 25
+absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 10, "number of symbols used to initialize the model")
+absl.flags.DEFINE_integer("NUM_OF_STATES", 60, "number of states used to initialize the model") #TODO: rimettere a 25
 
 absl.flags.DEFINE_integer("MAX_LENGTH_TRAIN_TRACES", 15, "maximum traces length used to create the train dataset")
 absl.flags.DEFINE_integer("LENGTH_TEST_TRACES", 15, "maximum traces length used to create the test dataset")
@@ -23,6 +23,7 @@ absl.flags.DEFINE_string("LOG_DIR", "Results/", "path to save the results")
 absl.flags.DEFINE_string("PLOTS_DIR", "Plots/", "path to save the plots")
 absl.flags.DEFINE_string("AUTOMATA_DIR", "Automata/", "path to save the learned automata")
 absl.flags.DEFINE_string("MODELS_DIR", "Models/", "path to save the learned automata")
+absl.flags.DEFINE_boolean("TRAIN_ON_RESTRICTED_DATASET", True, "if True, train on a restricted dataset (MNIST)")
 
 
 FLAGS = absl.flags.FLAGS
