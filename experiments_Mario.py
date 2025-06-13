@@ -15,6 +15,7 @@ import os
 
 from tqdm import tqdm
 from contextlib import redirect_stdout
+import datetime
 
 #flags
 absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 25, "number of symbols used to initialize the model")
@@ -62,8 +63,8 @@ def main(argv):
         torchvision.transforms.Normalize(mean=[0.5], std=[0.5])
     ])
     
-    X_train, y_train =loadMarioDataset_balanced_labels("../Observations/", transform=transform, num_outputs=2)
-    X_test, y_test =loadMarioDataset_balanced_labels("../Observations/", transform=transform, num_outputs=2)
+    X_train, y_train =loadMarioDataset_balanced_labels("./observation_clean_v3/Train", transform=transform, num_outputs=2)
+    X_test, y_test =loadMarioDataset_balanced_labels("./observation_clean_v3/Train", transform=transform, num_outputs=2)
     
     num_exp = 10
     if FLAGS.NUM_OF_SYMBOLS == 5:
@@ -95,19 +96,22 @@ def main(argv):
     with tqdm(range(num_exp)) as pbar:
         for i in pbar:
             set_seed(9+i)
-            #set_seed
             
+            now = datetime.datetime.now()
+            print(f"Experiment {i}/{num_exp - 1} started at {now.strftime('%Y-%m-%d %H:%M:%S')}")
+
+            log_dir = FLAGS.LOG_DIR + now + "/"
             print("###################### NEW TEST ###########################")
             print("formula = {},\texperiment = {}".format(formula_name, i))
             #with open(os.devnull, 'w') as fnull, redirect_stdout(fnull):
             #DeepDFA
-            test_method("logic_circuit", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, automata_dir=FLAGS.AUTOMATA_DIR, models_dir=FLAGS.MODELS_DIR)
+            test_method("logic_circuit", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, automata_dir=FLAGS.AUTOMATA_DIR, models_dir=FLAGS.MODELS_DIR)
             #lstm
-            test_method("lstm", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
+            test_method("lstm", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
             #gru
-            test_method("gru", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
+            test_method("gru", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
             #transformers
-            test_method("transformer", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=FLAGS.LOG_DIR, models_dir=FLAGS.MODELS_DIR)
+            test_method("transformer", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
     plot_results(formula, formula_name, res_dir = FLAGS.LOG_DIR,num_exp=num_exp, plot_legend=True, plot_dir= FLAGS.PLOTS_DIR, aut_dir=FLAGS.AUTOMATA_DIR, state_count=6, symbol_count=4)
 
 if __name__ == '__main__':

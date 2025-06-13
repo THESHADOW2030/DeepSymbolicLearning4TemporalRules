@@ -14,6 +14,7 @@ import math
 import pickle
 from minimization import minimize_dfa_symbols_and_states
 from utils import eval_accuracy, eval_image_classification_from_traces, gumbel_softmax, eval_accuracy_DFA
+from tqdm import tqdm
 if torch.cuda.is_available():
     device = 'cuda:0'
 else:
@@ -76,11 +77,11 @@ class DSLMooreMachine:
             self.num_channels = 1
             self.pixels_h = 256
             self.pixels_v = 240
-            nodes_linear = 256
-            self.classifier = CNN_mario(self.num_channels, self.numb_of_symbols, nodes_linear)
+            nodes_linear = 96
+            self.classifier = CNN_mnist(self.num_channels, self.numb_of_symbols, nodes_linear)
 
 
-            self.num_outputs = 12
+            self.num_outputs = 10
 
 
 
@@ -129,14 +130,14 @@ class DSLMooreMachine:
         return red_trans_funct
 
 
-    def eval_automa_acceptance(self, automa_implementation = 'logic_circuit', verbose = False, threshold= None):
+    def eval_automa_acceptance(self, automa_implementation = 'logic_circuit', verbose = False, threshold= None, step = None):
         if automa_implementation in ['dfa', "dfa-cut", 'dfa.cut-sym']:
             temp = 0.00001
         else:
             temp = 1
         train_accuracy = eval_accuracy(self.classifier, self.deepAutoma, self.train_img_seq, self.train_acceptance_img, automa_implementation=automa_implementation, temp=temp, verbose=verbose, threshold=threshold)
-        test_accuracy_clss= 0#eval_accuracy( self.classifier, self.deepAutoma, self.test_img_seq_clss, self.test_acceptance_img_clss, automa_implementation=automa_implementation, temp=temp, verbose=verbose, threshold=threshold)
-        test_accuracy_aut= 0#eval_accuracy( self.classifier, self.deepAutoma, self.test_img_seq_aut, self.test_acceptance_img_aut, automa_implementation=automa_implementation, temp=temp, verbose=verbose, threshold=threshold)
+        test_accuracy_clss= eval_accuracy( self.classifier, self.deepAutoma, self.test_img_seq_clss, self.test_acceptance_img_clss, automa_implementation=automa_implementation, temp=temp, verbose=verbose, threshold=threshold)
+        test_accuracy_aut= eval_accuracy( self.classifier, self.deepAutoma, self.test_img_seq_aut, self.test_acceptance_img_aut, automa_implementation=automa_implementation, temp=temp, verbose=verbose, threshold=threshold)
         test_accuracy_hard= eval_accuracy( self.classifier, self.deepAutoma, self.test_img_seq_hard, self.test_acceptance_img_hard, automa_implementation=automa_implementation, temp=temp, verbose=verbose, threshold=threshold)
 
         return train_accuracy, test_accuracy_clss, test_accuracy_aut, test_accuracy_hard
@@ -224,29 +225,28 @@ class DSLMooreMachine:
             new_loss =  mean(loss_values)
             #print("loss: ", new_loss)
             #scheduler.step(mean(loss_values))
-
-            train_accuracy, test_accuracy_clss, test_accuracy_aut, test_accuracy_hard = self.eval_automa_acceptance(automa_implementation=self.automa_implementation)
             if epoch % 10 == 0:
-                print("SEQUENCE CLASSIFICATION (LOGIC CIRCUIT): train accuracy : {}\ttest accuracy(clss) : {}\ttest accuracy(aut) : {}\ttest accuracy(hard) : {}".format(train_accuracy,
-                                                                                                     test_accuracy_clss, test_accuracy_aut, test_accuracy_hard))
-
-            if self.automa_implementation == "logic_circuit":
-                #train_image_classification_accuracy, test_image_classification_accuracy = self.eval_image_classification()
-                #print("IMAGE CLASSIFICATION: train accuracy : {}\ttest accuracy : {}".format(train_image_classification_accuracy,test_image_classification_accuracy))
-
-                train_accuracy, test_accuracy_clss, test_accuracy_aut, test_accuracy_hard = self.eval_automa_acceptance(
-                        automa_implementation='dfa')
+                train_accuracy, test_accuracy_clss, test_accuracy_aut, test_accuracy_hard = self.eval_automa_acceptance(automa_implementation=self.automa_implementation, step = i)
                 if epoch % 10 == 0:
-                    print(
-                        "SEQUENCE CLASSIFICATION (DFA): train accuracy : {}\ttest accuracy(clss) : {}\ttest accuracy(aut) : {}\ttest accuracy(hard) : {}".format(
-                            train_accuracy,
-                            test_accuracy_clss, test_accuracy_aut, test_accuracy_hard))
+                    print("SEQUENCE CLASSIFICATION (LOGIC CIRCUIT): train accuracy : {}\ttest accuracy(clss) : {}\ttest accuracy(aut) : {}\ttest accuracy(hard) : {}".format(train_accuracy,
+                                                                                                        test_accuracy_clss, test_accuracy_aut, test_accuracy_hard))
+                if self.automa_implementation == "logic_circuit":
+                    #train_image_classification_accuracy, test_image_classification_accuracy = self.eval_image_classification()
+                    #print("IMAGE CLASSIFICATION: train accuracy : {}\ttest accuracy : {}".format(train_image_classification_accuracy,test_image_classification_accuracy))
+
+                    train_accuracy, test_accuracy_clss, test_accuracy_aut, test_accuracy_hard = self.eval_automa_acceptance(
+                            automa_implementation='dfa')
+                    if epoch % 10 == 0:
+                        print(
+                            "SEQUENCE CLASSIFICATION (DFA): train accuracy : {}\ttest accuracy(clss) : {}\ttest accuracy(aut) : {}\ttest accuracy(hard) : {}".format(
+                                train_accuracy,
+                                test_accuracy_clss, test_accuracy_aut, test_accuracy_hard))
 
 
-            train_file.write("{}\n".format(train_accuracy))
-            test_clss_file.write("{}\n".format(test_accuracy_clss))
-            test_aut_file.write("{}\n".format(test_accuracy_aut))
-            test_hard_file.write("{}\n".format(test_accuracy_hard))
+                train_file.write("{}\n".format(train_accuracy))
+                test_clss_file.write("{}\n".format(test_accuracy_clss))
+                test_aut_file.write("{}\n".format(test_accuracy_aut))
+                test_hard_file.write("{}\n".format(test_accuracy_hard))
 
 
             if mean(loss_values) <= 0.01:
