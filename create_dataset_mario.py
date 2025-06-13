@@ -164,55 +164,30 @@ def loadMarioDataset_balanced_labels(root_dir, num_outputs=5, transform=None):
 
     # Load all sequences and their image-label pairs
     for sequence_dir in tqdm(sorted(os.listdir(root_dir)), desc="Processing Sequences"):
+        
         sequence_path = os.path.join(root_dir, sequence_dir)
         if os.path.isdir(sequence_path):
             images = []
             files = os.listdir(sequence_path)
-            for filename in tqdm(files, desc=f"Processing {sequence_dir}", leave=False):
-                if filename.endswith(("png", "jpg", "jpeg")):
+            for filename in tqdm(files, desc=f"Processing {sequence_dir}", leave=False):          
+                if filename.endswith(("png", "jpg", "jpeg")):                
                     label = int(
                         filename.split("_")[1].split(".")[0]
                     ) # Extract label from filename
-                    """
-                    if num_outputs == 3:
-                        # distinction in failure, neutral, success
-                        # success (->2)
-                        if label == 0:
-                            label = 2
-                        # failure (->0)
-                        elif label == 4:
-                            label = 0
-                        else:
-                            label = 1
-                    elif num_outputs == 2:
-                        # distinction in failure, success
-                        # success (->1)
-                        if label == 0:
-                            label = 1
-                            # failure (->0)
-                        else:
-                            label = 0
-                    """
                     img_path = os.path.join(sequence_path, filename)
                     image = Image.open(img_path).convert("RGB")
                     images.append(transform(image))
                     image_sequences.append(torch.stack(images, dim=0))
                     labels.append(label)
-                    
-            """
-                space_left = len(image_sequences) - 30
-                for _ in range(space_left):
-                    images.append(transform(image))
-                    image_sequences.append(torch.stack(images, dim=0))
-                    labels.append(label)
-                """
+
     
 
     img_seq_train_batch = []
     acceptance_train_batch = []
     lens = []
-    print(len(image_sequences))
-    print(len(labels))
+    print(f"Total sequences: {len(image_sequences)}")
+    print(f"Total labels: {len(labels)}")
+    print(f"Number of unique labels: {len(set(labels))}")
     for i in range(len(image_sequences)):
         trace = image_sequences[i]
         acc = labels[i]
@@ -224,111 +199,10 @@ def loadMarioDataset_balanced_labels(root_dir, num_outputs=5, transform=None):
         img_seq_train_batch[lens.index(lenght)].append(trace)
         acceptance_train_batch[lens.index(lenght)].append(acc)
 
-    img_seq_train_batch_bal = []
-    acceptance_train_batch_bal = []
-    # balance labels
-    for i, batch in enumerate(img_seq_train_batch):
-        negative_traces = [
-            batch[k] for k in range(len(batch)) if acceptance_train_batch[i][k] == 0
-        ]
-        neutral_traces = [
-            batch[k] for k in range(len(batch)) if acceptance_train_batch[i][k] == 1
-        ]
-        positive_traces = [
-            batch[k] for k in range(len(batch)) if acceptance_train_batch[i][k] == 2
-        ]
-        other_traces = [
-            batch[k] for k in range(len(batch)) if acceptance_train_batch[i][k] == 3
-        ]
-        other_other_traces = [
-            batch[k] for k in range(len(batch)) if acceptance_train_batch[i][k] == 4
-        ]
-        if num_outputs == 2 and not (
-            len(neutral_traces)
-        ):  # and len(positive_traces) and len(negative_traces) and len(other_traces)):
-            continue
-        if (
-            num_outputs == 3
-            and (not len(positive_traces))
-            and (not len(negative_traces))
-        ):
-            continue
-        # if num_outputs == 4 and not (len(negative_traces)):
-        #    continue
-        max_length_count = max(
-            len(positive_traces),
-            len(negative_traces),
-            len(neutral_traces),
-            len(other_traces),
-            len(other_other_traces),
-        )
-        # max_length_count = min(len(negative_traces), len(neutral_traces))
-        # negative_traces = negative_traces[:max_length_count]
-        # neutral_traces = neutral_traces[:max_length_count]
+    # Skip balancing and return original stacked data
+    img_seq_train_batch_bal = [torch.stack(batch) for batch in img_seq_train_batch]
+    acceptance_train_batch_bal = [torch.LongTensor(batch) for batch in acceptance_train_batch]
 
-        # Repeat traces if necessary to balance batches
-        if len(positive_traces) and len(positive_traces) < max_length_count:
-            positive_traces = (
-                positive_traces * (max_length_count // len(positive_traces))
-                + positive_traces[: max_length_count % len(positive_traces)]
-            )
-
-        if len(negative_traces) and len(negative_traces) < max_length_count:
-            negative_traces = (
-                negative_traces * (max_length_count // len(negative_traces))
-                + negative_traces[: max_length_count % len(negative_traces)]
-            )
-
-        if len(neutral_traces) and len(neutral_traces) < max_length_count:
-            neutral_traces = (
-                neutral_traces * (max_length_count // len(neutral_traces))
-                + neutral_traces[: max_length_count % len(neutral_traces)]
-            )
-
-        if len(other_traces) and len(other_traces) < max_length_count:
-            other_traces = (
-                other_traces * (max_length_count // len(other_traces))
-                + other_traces[: max_length_count % len(other_traces)]
-            )
-
-        if len(other_other_traces) and len(other_other_traces) < max_length_count:
-            other_other_traces = (
-                other_other_traces * (max_length_count // len(other_other_traces))
-                + other_other_traces[: max_length_count % len(other_other_traces)]
-            )
-
-        # Combine and shuffle traces
-        balanced_traces = (
-            positive_traces
-            + negative_traces
-            + neutral_traces
-            + other_traces
-            + other_other_traces
-        )
-        balanced_labels = (
-            [2] * len(positive_traces)
-            + [0] * len(negative_traces)
-            + [1] * len(neutral_traces)
-            + [3] * len(other_traces)
-            + [4] * len(other_other_traces)
-        )
-
-        shuffle_indices = list(range(len(balanced_traces)))
-        shuffle(shuffle_indices)
-
-        balanced_traces = [balanced_traces[i] for i in shuffle_indices]
-        balanced_labels = [balanced_labels[i] for i in shuffle_indices]
-
-        img_seq_train_batch_bal.append(balanced_traces)
-        acceptance_train_batch_bal.append(balanced_labels)
-
-    img_seq_train_batch_bal = [torch.stack(batch) for batch in img_seq_train_batch_bal]
-    acceptance_train_batch_bal = [
-        torch.LongTensor(batch) for batch in acceptance_train_batch_bal
-    ]
-
-    for i in range(len(img_seq_train_batch_bal)):
-        print(acceptance_train_batch_bal[i])
     return img_seq_train_batch_bal, acceptance_train_batch_bal
 
 
