@@ -322,6 +322,7 @@ class TransformerClassifier(nn.Module):
         self.input_dim = input_dim
         self.hidden_dim = d_model
         self.embedding = nn.Linear(input_dim, d_model)
+        #print(f"Num classes: {num_classes}, d_model: {d_model}, nhead: {nhead}, num_layers: {num_layers}")
         self.transformer = nn.Transformer(d_model=d_model, nhead=nhead, num_encoder_layers=num_layers, batch_first=True)
         self.fc = nn.Linear(d_model, num_classes)
         #self.sigmoid = nn.Sigmoid()

@@ -100,6 +100,7 @@ class DSLMooreMachine:
         elif self.automa_implementation == "gru":
             self.deepAutoma = GRUClassifier(self.hidden_dim, self.numb_of_symbols, self.num_outputs)
         elif self.automa_implementation == "transformer":
+            
             self.deepAutoma = TransformerClassifier(self.hidden_dim, self.numb_of_symbols, self.num_outputs)
         else:
             sys.exit("INVALID AUTOMA IMPLEMENTATION. Choose between 'lstm', 'gru', 'transformer', and 'logic_circuit'")
@@ -190,11 +191,13 @@ class DSLMooreMachine:
 
         classification_temperature = 0.5
 
-        for epoch in range(num_of_epochs):
+        for epoch in tqdm(range(num_of_epochs), desc=f"Training Epochs for {self.automa_implementation}", leave=False):
+            
             #print("epoch: ", epoch)
             loss_values = []
             temp = max(temp*decay, min_temp)
-            for i in range(len(self.train_img_seq)):
+            for i in tqdm(range(len(self.train_img_seq)), desc="Training Batches", leave=False):
+              
               image_dataset = self.train_img_seq[i].to(device)
               dataset_acceptance = self.train_acceptance_img[i].to(device)
               tot_size = len(dataset_acceptance)
@@ -216,6 +219,9 @@ class DSLMooreMachine:
                 else:
                     sym_sequence = self.classifier(batch_image_dataset.view(-1,channels, pixels1, pixels2))
                     prediction = self.deepAutoma(sym_sequence.view(batch, length, -1))
+                    if prediction.dim() == 1:
+                        prediction = prediction.unsqueeze(0)
+                    #print(f"prediction shape: {prediction.shape}, batch_acceptance shape: {batch_acceptance.shape}")
                     loss = crossentropy(prediction, batch_acceptance)
 
                 loss.backward()
