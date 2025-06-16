@@ -1,0 +1,968 @@
+<frozen importlib._bootstrap>:228: RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it. The performance of some of your blits could be adversely affected. Consider enabling compile time detection with environment variables like PYGAME_DETECT_AVX2=1 if you are compiling without cross compilation.
+pygame 2.6.1 (SDL 2.30.10, Python 3.9.16)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Processing Sequences:   0%|          | 0/82 [00:00<?, ?it/s]
+Processing episode_0:   0%|          | 0/52 [00:00<?, ?it/s][A
+                                                            [A
+Processing episode_1:   0%|          | 0/158 [00:00<?, ?it/s][A
+Processing episode_1:  49%|████▊     | 77/158 [00:00<00:00, 759.78it/s][A
+Processing episode_1:  97%|█████████▋| 153/158 [00:00<00:00, 668.83it/s][A
+                                                                        [AProcessing Sequences:   2%|▏         | 2/82 [00:00<00:11,  6.89it/s]
+Processing episode_100:   0%|          | 0/37 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_101:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_106:   0%|          | 0/37 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:   6%|▌         | 5/82 [00:00<00:05, 13.39it/s]
+Processing episode_107:   0%|          | 0/19 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_108:   0%|          | 0/10 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_109:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_110:   0%|          | 0/126 [00:00<?, ?it/s][A
+Processing episode_110:  63%|██████▎   | 79/126 [00:00<00:00, 758.75it/s][A
+                                                                         [AProcessing Sequences:  11%|█         | 9/82 [00:00<00:05, 13.98it/s]
+Processing episode_111:   0%|          | 0/50 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_112:   0%|          | 0/39 [00:00<?, ?it/s][A
+Processing episode_112: 100%|██████████| 39/39 [00:00<00:00, 388.68it/s][A
+                                                                        [AProcessing Sequences:  13%|█▎        | 11/82 [00:00<00:05, 13.76it/s]
+Processing episode_113:   0%|          | 0/9 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_116:   0%|          | 0/6 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_117:   0%|          | 0/83 [00:00<?, ?it/s][A
+Processing episode_117: 100%|██████████| 83/83 [00:00<00:00, 824.24it/s][A
+                                                                        [AProcessing Sequences:  17%|█▋        | 14/82 [00:00<00:04, 16.77it/s]
+Processing episode_12:   0%|          | 0/6 [00:00<?, ?it/s][A
+                                                            [A
+Processing episode_122:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_123:   0%|          | 0/17 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_125:   0%|          | 0/54 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  22%|██▏       | 18/82 [00:01<00:02, 21.38it/s]
+Processing episode_129:   0%|          | 0/38 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_13:   0%|          | 0/45 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_130:   0%|          | 0/13 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  26%|██▌       | 21/82 [00:01<00:02, 22.75it/s]
+Processing episode_131:   0%|          | 0/9 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_136:   0%|          | 0/49 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_137:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  29%|██▉       | 24/82 [00:01<00:02, 24.53it/s]
+Processing episode_139:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_140:   0%|          | 0/15 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_141:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  33%|███▎      | 27/82 [00:01<00:02, 24.59it/s]
+Processing episode_142:   0%|          | 0/65 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_144:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_145:   0%|          | 0/37 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  37%|███▋      | 30/82 [00:01<00:02, 22.35it/s]
+Processing episode_146:   0%|          | 0/22 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_147:   0%|          | 0/38 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_149:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_153:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  41%|████▏     | 34/82 [00:01<00:01, 24.33it/s]
+Processing episode_154:   0%|          | 0/12 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_155:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_162:   0%|          | 0/19 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_164:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  46%|████▋     | 38/82 [00:01<00:01, 26.55it/s]
+Processing episode_170:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_171:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_172:   0%|          | 0/34 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  50%|█████     | 41/82 [00:01<00:01, 25.99it/s]
+Processing episode_173:   0%|          | 0/105 [00:00<?, ?it/s][A
+Processing episode_173:  83%|████████▎ | 87/105 [00:00<00:00, 860.86it/s][A
+                                                                         [A
+Processing episode_176:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_177:   0%|          | 0/46 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  54%|█████▎    | 44/82 [00:02<00:01, 20.86it/s]
+Processing episode_178:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_179:   0%|          | 0/37 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_181:   0%|          | 0/15 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_183:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  59%|█████▊    | 48/82 [00:02<00:01, 23.26it/s]
+Processing episode_184:   0%|          | 0/37 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_187:   0%|          | 0/19 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_188:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  62%|██████▏   | 51/82 [00:02<00:01, 24.55it/s]
+Processing episode_191:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_197:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_199:   0%|          | 0/47 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  66%|██████▌   | 54/82 [00:02<00:01, 24.19it/s]
+Processing episode_200:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_201:   0%|          | 0/4 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_202:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_204:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  71%|███████   | 58/82 [00:02<00:00, 26.22it/s]
+Processing episode_25:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_28:   0%|          | 0/34 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_3:   0%|          | 0/38 [00:00<?, ?it/s][A
+                                                            [AProcessing Sequences:  74%|███████▍  | 61/82 [00:02<00:00, 26.22it/s]
+Processing episode_34:   0%|          | 0/38 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_40:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_41:   0%|          | 0/37 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences:  78%|███████▊  | 64/82 [00:02<00:00, 25.90it/s]
+Processing episode_42:   0%|          | 0/37 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_46:   0%|          | 0/19 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_47:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_48:   0%|          | 0/12 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences:  83%|████████▎ | 68/82 [00:03<00:00, 28.85it/s]
+Processing episode_58:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_72:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_73:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences:  87%|████████▋ | 71/82 [00:03<00:00, 27.59it/s]
+Processing episode_78:   0%|          | 0/38 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_79:   0%|          | 0/19 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_8:   0%|          | 0/6 [00:00<?, ?it/s][A
+                                                           [A
+Processing episode_81:   0%|          | 0/13 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_82:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences:  93%|█████████▎| 76/82 [00:03<00:00, 31.78it/s]
+Processing episode_85:   0%|          | 0/15 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_87:   0%|          | 0/151 [00:00<?, ?it/s][A
+Processing episode_87:  62%|██████▏   | 94/151 [00:00<00:00, 931.86it/s][A
+                                                                        [A
+Processing episode_88:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_9:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                            [AProcessing Sequences:  98%|█████████▊| 80/82 [00:03<00:00, 22.95it/s]
+Processing episode_92:   0%|          | 0/30 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_95:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences: 100%|██████████| 82/82 [00:03<00:00, 22.50it/s]
+Total sequences: 3180
+Total labels: 3180
+Number of unique labels: 10
+Processing Sequences:   0%|          | 0/29 [00:00<?, ?it/s]
+Processing episode_10:   0%|          | 0/45 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_11:   0%|          | 0/9 [00:00<?, ?it/s][A
+                                                            [A
+Processing episode_114:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_115:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  14%|█▍        | 4/29 [00:00<00:00, 32.60it/s]
+Processing episode_124:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_148:   0%|          | 0/19 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_16:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_17:   0%|          | 0/9 [00:00<?, ?it/s][A
+                                                            [A
+Processing episode_18:   0%|          | 0/4 [00:00<?, ?it/s][A
+                                                            [AProcessing Sequences:  31%|███       | 9/29 [00:00<00:00, 41.07it/s]
+Processing episode_182:   0%|          | 0/8 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_185:   0%|          | 0/15 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_19:   0%|          | 0/19 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_20:   0%|          | 0/75 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_206:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                              [AProcessing Sequences:  48%|████▊     | 14/29 [00:00<00:00, 38.68it/s]
+Processing episode_207:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_208:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                              [A
+Processing episode_21:   0%|          | 0/45 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_26:   0%|          | 0/17 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences:  62%|██████▏   | 18/29 [00:00<00:00, 34.42it/s]
+Processing episode_27:   0%|          | 0/42 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_29:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_43:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_44:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences:  76%|███████▌  | 22/29 [00:00<00:00, 30.16it/s]
+Processing episode_45:   0%|          | 0/40 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_7:   0%|          | 0/429 [00:00<?, ?it/s][A
+Processing episode_7:  20%|█▉        | 84/429 [00:00<00:00, 801.28it/s][A
+Processing episode_7:  38%|███▊      | 165/429 [00:00<00:00, 729.36it/s][A
+Processing episode_7:  58%|█████▊    | 250/429 [00:00<00:00, 776.99it/s][A
+Processing episode_7:  77%|███████▋  | 331/429 [00:00<00:00, 786.99it/s][A
+Processing episode_7:  96%|█████████▌| 411/429 [00:00<00:00, 723.64it/s][A
+                                                                        [A
+Processing episode_74:   0%|          | 0/6 [00:00<?, ?it/s][A
+                                                            [A
+Processing episode_75:   0%|          | 0/17 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences:  90%|████████▉ | 26/29 [00:01<00:00, 13.28it/s]
+Processing episode_80:   0%|          | 0/39 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_86:   0%|          | 0/41 [00:00<?, ?it/s][A
+                                                             [A
+Processing episode_89:   0%|          | 0/13 [00:00<?, ?it/s][A
+                                                             [AProcessing Sequences: 100%|██████████| 29/29 [00:01<00:00, 20.53it/s]
+Total sequences: 1297
+Total labels: 1297
+Number of unique labels: 10
+Dataset loaded with 158 training samples and 429 test samples.
+Mario No Bias_______________________
+Training dataset
+Test dataset
+Number of symbols: 25, Number of states: 50
+  0%|          | 0/10 [00:00<?, ?it/s]Experiment 0/9 started at 2025-06-13 19:03:48:   0%|          | 0/10 [00:00<?, ?it/s]Experiment 0/9 started at 2025-06-13--19:03:48
+###################### NEW TEST ###########################
+formula = Mario No Bias,	experiment = 0
+impossible to print the target automaton
+_____________training the classifier+DFA_____________
+
+Training Epochs for logic_circuit:   0%|          | 0/500 [00:00<?, ?it/s][A
+
+Training Batches:   0%|          | 0/158 [00:00<?, ?it/s][A[A
+
+Training Batches:   1%|          | 1/158 [00:00<01:00,  2.59it/s][A[A
+
+Training Batches:   3%|▎         | 5/158 [00:00<00:12, 12.00it/s][A[A
+
+Training Batches:   5%|▌         | 8/158 [00:00<00:10, 14.28it/s][A[A
+
+Training Batches:   6%|▋         | 10/158 [00:00<00:09, 15.08it/s][A[A
+
+Training Batches:   8%|▊         | 12/158 [00:01<00:12, 11.96it/s][A[A
+
+Training Batches:   9%|▉         | 14/158 [00:01<00:11, 12.69it/s][A[A
+
+Training Batches:  10%|█         | 16/158 [00:01<00:11, 12.08it/s][A[A
+
+Training Batches:  11%|█▏        | 18/158 [00:01<00:13, 10.04it/s][A[A
+
+Training Batches:  13%|█▎        | 20/158 [00:01<00:14,  9.74it/s][A[A
+
+Training Batches:  14%|█▍        | 22/158 [00:01<00:12, 10.65it/s][A[A
+
+Training Batches:  15%|█▌        | 24/158 [00:02<00:11, 11.83it/s][A[A
+
+Training Batches:  16%|█▋        | 26/158 [00:02<00:12, 10.60it/s][A[A
+
+Training Batches:  18%|█▊        | 28/158 [00:02<00:13,  9.69it/s][A[A
+
+Training Batches:  19%|█▉        | 30/158 [00:02<00:13,  9.20it/s][A[A
+
+Training Batches:  20%|█▉        | 31/158 [00:02<00:13,  9.30it/s][A[A
+
+Training Batches:  20%|██        | 32/158 [00:03<00:13,  9.06it/s][A[A
+
+Training Batches:  21%|██        | 33/158 [00:03<00:13,  8.96it/s][A[A
+
+Training Batches:  22%|██▏       | 34/158 [00:03<00:14,  8.62it/s][A[A
+
+Training Batches:  23%|██▎       | 36/158 [00:03<00:13,  8.73it/s][A[A
+
+Training Batches:  23%|██▎       | 37/158 [00:03<00:15,  7.90it/s][A[A
+
+Training Batches:  24%|██▍       | 38/158 [00:03<00:18,  6.52it/s][A[A
+
+Training Batches:  25%|██▍       | 39/158 [00:04<00:16,  7.10it/s][A[A
+
+Training Batches:  25%|██▌       | 40/158 [00:04<00:16,  7.00it/s][A[A
+
+Training Batches:  26%|██▌       | 41/158 [00:04<00:20,  5.67it/s][A[A
+
+Training Batches:  27%|██▋       | 42/158 [00:04<00:18,  6.12it/s][A[A
+
+Training Batches:  28%|██▊       | 44/158 [00:04<00:14,  7.81it/s][A[A
+
+Training Batches:  29%|██▉       | 46/158 [00:04<00:12,  9.23it/s][A[A
+
+Training Batches:  30%|███       | 48/158 [00:05<00:11,  9.88it/s][A[A
+
+Training Batches:  32%|███▏      | 50/158 [00:05<00:11,  9.73it/s][A[A
+
+Training Batches:  33%|███▎      | 52/158 [00:05<00:10,  9.88it/s][A[A
+
+Training Batches:  34%|███▍      | 54/158 [00:05<00:10, 10.26it/s][A[A
+
+Training Batches:  35%|███▌      | 56/158 [00:05<00:09, 10.71it/s][A[A
+
+Training Batches:  37%|███▋      | 58/158 [00:06<00:09, 10.97it/s][A[A
+
+Training Batches:  38%|███▊      | 60/158 [00:06<00:09, 10.07it/s][A[A
+
+Training Batches:  39%|███▉      | 62/158 [00:06<00:10,  9.39it/s][A[A
+
+Training Batches:  40%|███▉      | 63/158 [00:06<00:10,  9.26it/s][A[A
+
+Training Batches:  41%|████      | 64/158 [00:06<00:10,  9.28it/s][A[A
+
+Training Batches:  41%|████      | 65/158 [00:06<00:10,  8.61it/s][A[A
+
+Training Batches:  42%|████▏     | 66/158 [00:06<00:10,  8.80it/s][A[A
+
+Training Batches:  42%|████▏     | 67/158 [00:07<00:11,  8.22it/s][A[A
+
+Training Batches:  43%|████▎     | 68/158 [00:07<00:11,  8.02it/s][A[A
+
+Training Batches:  44%|████▎     | 69/158 [00:07<00:10,  8.25it/s][A[A
+
+Training Batches:  44%|████▍     | 70/158 [00:07<00:10,  8.21it/s][A[A
+
+Training Batches:  45%|████▍     | 71/158 [00:07<00:10,  8.32it/s][A[A
+
+Training Batches:  46%|████▌     | 72/158 [00:07<00:10,  8.16it/s][A[A
+
+Training Batches:  46%|████▌     | 73/158 [00:07<00:10,  8.00it/s][A[A
+
+Training Batches:  47%|████▋     | 74/158 [00:08<00:10,  7.65it/s][A[A
+
+Training Batches:  47%|████▋     | 75/158 [00:08<00:10,  7.58it/s][A[A
+
+Training Batches:  48%|████▊     | 76/158 [00:08<00:11,  7.44it/s][A[A
+
+Training Batches:  49%|████▊     | 77/158 [00:08<00:12,  6.63it/s][A[A
+
+Training Batches:  49%|████▉     | 78/158 [00:08<00:12,  6.59it/s][A[A
+
+Training Batches:  50%|█████     | 79/158 [00:08<00:11,  6.60it/s][A[A
+
+Training Batches:  51%|█████     | 80/158 [00:08<00:11,  6.68it/s][A[A
+
+Training Batches:  51%|█████▏    | 81/158 [00:09<00:10,  7.33it/s][A[A
+
+Training Batches:  52%|█████▏    | 82/158 [00:09<00:10,  7.40it/s][A[A
+
+Training Batches:  53%|█████▎    | 83/158 [00:09<00:10,  7.31it/s][A[A
+
+Training Batches:  53%|█████▎    | 84/158 [00:09<00:09,  7.60it/s][A[A
+
+Training Batches:  54%|█████▍    | 85/158 [00:09<00:09,  7.45it/s][A[A
+
+Training Batches:  54%|█████▍    | 86/158 [00:09<00:09,  7.34it/s][A[A
+
+Training Batches:  55%|█████▌    | 87/158 [00:10<00:22,  3.09it/s][A[A
+
+Training Batches:  56%|█████▌    | 88/158 [00:10<00:19,  3.61it/s][A[A
+
+Training Batches:  56%|█████▋    | 89/158 [00:10<00:17,  3.97it/s][A[A
+
+Training Batches:  57%|█████▋    | 90/158 [00:10<00:14,  4.54it/s][A[A
+
+Training Batches:  58%|█████▊    | 91/158 [00:11<00:14,  4.52it/s][A[A
+
+Training Batches:  58%|█████▊    | 92/158 [00:11<00:13,  4.89it/s][A[A
+
+Training Batches:  59%|█████▉    | 93/158 [00:11<00:12,  5.29it/s][A[A
+
+Training Batches:  59%|█████▉    | 94/158 [00:11<00:11,  5.52it/s][A[A
+
+Training Batches:  60%|██████    | 95/158 [00:11<00:10,  5.75it/s][A[A
+
+Training Batches:  61%|██████    | 96/158 [00:11<00:10,  5.84it/s][A[A
+
+Training Batches:  61%|██████▏   | 97/158 [00:12<00:10,  5.58it/s][A[A
+
+Training Batches:  62%|██████▏   | 98/158 [00:12<00:10,  5.58it/s][A[A
+
+Training Batches:  63%|██████▎   | 99/158 [00:12<00:11,  5.36it/s][A[A
+
+Training Batches:  63%|██████▎   | 100/158 [00:12<00:11,  5.16it/s][A[A
+
+Training Batches:  64%|██████▍   | 101/158 [00:13<00:11,  4.99it/s][A[A
+
+Training Batches:  65%|██████▍   | 102/158 [00:13<00:11,  5.00it/s][A[A
+
+Training Batches:  65%|██████▌   | 103/158 [00:13<00:10,  5.13it/s][A[A
+
+Training Batches:  66%|██████▌   | 104/158 [00:13<00:10,  5.25it/s][A[A
+
+Training Batches:  66%|██████▋   | 105/158 [00:13<00:10,  5.16it/s][A[A
+
+Training Batches:  67%|██████▋   | 106/158 [00:13<00:09,  5.23it/s][A[A
+
+Training Batches:  68%|██████▊   | 107/158 [00:14<00:10,  5.06it/s][A[A
+
+Training Batches:  68%|██████▊   | 108/158 [00:14<00:10,  4.94it/s][A[A
+
+Training Batches:  69%|██████▉   | 109/158 [00:14<00:10,  4.75it/s][A[A
+
+Training Batches:  70%|██████▉   | 110/158 [00:14<00:10,  4.78it/s][A[A
+
+Training Batches:  70%|███████   | 111/158 [00:15<00:10,  4.63it/s][A[A
+
+Training Batches:  71%|███████   | 112/158 [00:15<00:10,  4.37it/s][A[A
+
+Training Batches:  72%|███████▏  | 113/158 [00:15<00:10,  4.49it/s][A[A
+
+Training Batches:  72%|███████▏  | 114/158 [00:15<00:09,  4.64it/s][A[A
+
+Training Batches:  73%|███████▎  | 115/158 [00:15<00:09,  4.50it/s][A[A
+
+Training Batches:  73%|███████▎  | 116/158 [00:16<00:09,  4.49it/s][A[A
+
+Training Batches:  74%|███████▍  | 117/158 [00:16<00:08,  4.63it/s][A[A
+
+Training Batches:  75%|███████▍  | 118/158 [00:16<00:08,  4.64it/s][A[A
+
+Training Batches:  75%|███████▌  | 119/158 [00:16<00:08,  4.59it/s][A[A
+
+Training Batches:  76%|███████▌  | 120/158 [00:17<00:08,  4.64it/s][A[A
+
+Training Batches:  77%|███████▋  | 121/158 [00:17<00:07,  4.64it/s][A[A
+
+Training Batches:  77%|███████▋  | 122/158 [00:17<00:07,  4.75it/s][A[A
+
+Training Batches:  78%|███████▊  | 123/158 [00:17<00:07,  4.59it/s][A[A
+
+Training Batches:  78%|███████▊  | 124/158 [00:17<00:07,  4.71it/s][A[A
+
+Training Batches:  79%|███████▉  | 125/158 [00:18<00:07,  4.56it/s][A[A
+
+Training Batches:  80%|███████▉  | 126/158 [00:18<00:07,  4.51it/s][A[A
+
+Training Batches:  80%|████████  | 127/158 [00:18<00:07,  4.32it/s][A[A
+
+Training Batches:  81%|████████  | 128/158 [00:18<00:06,  4.57it/s][A[A
+
+Training Batches:  82%|████████▏ | 129/158 [00:18<00:06,  4.61it/s][A[A
+
+Training Batches:  82%|████████▏ | 130/158 [00:19<00:05,  4.72it/s][A[A
+
+Training Batches:  83%|████████▎ | 131/158 [00:19<00:05,  4.69it/s][A[A
+
+Training Batches:  84%|████████▎ | 132/158 [00:19<00:05,  4.85it/s][A[A
+
+Training Batches:  84%|████████▍ | 133/158 [00:19<00:05,  4.91it/s][A[A
+
+Training Batches:  85%|████████▍ | 134/158 [00:20<00:05,  4.13it/s][A[A
+
+Training Batches:  85%|████████▌ | 135/158 [00:20<00:05,  4.03it/s][A[A
+
+Training Batches:  86%|████████▌ | 136/158 [00:20<00:05,  4.21it/s][A[A
+
+Training Batches:  87%|████████▋ | 137/158 [00:20<00:05,  4.12it/s][A[A
+
+Training Batches:  87%|████████▋ | 138/158 [00:21<00:04,  4.17it/s][A[A
+
+Training Batches:  88%|████████▊ | 139/158 [00:21<00:04,  4.38it/s][A[A
+
+Training Batches:  89%|████████▊ | 140/158 [00:21<00:04,  4.40it/s][A[A
+
+Training Batches:  89%|████████▉ | 141/158 [00:21<00:04,  3.84it/s][A[A
+
+Training Batches:  90%|████████▉ | 142/158 [00:22<00:05,  3.13it/s][A[A
+
+Training Batches:  91%|█████████ | 143/158 [00:22<00:04,  3.49it/s][A[A
+
+Training Batches:  91%|█████████ | 144/158 [00:22<00:03,  3.87it/s][A[A
+
+Training Batches:  92%|█████████▏| 145/158 [00:22<00:03,  4.09it/s][A[A
+
+Training Batches:  92%|█████████▏| 146/158 [00:23<00:02,  4.33it/s][A[A
+
+Training Batches:  93%|█████████▎| 147/158 [00:23<00:02,  4.32it/s][A[A
+
+Training Batches:  94%|█████████▎| 148/158 [00:23<00:02,  4.33it/s][A[A
+
+Training Batches:  94%|█████████▍| 149/158 [00:23<00:02,  4.20it/s][A[A
+
+Training Batches:  95%|█████████▍| 150/158 [00:24<00:01,  4.24it/s][A[A
+
+Training Batches:  96%|█████████▌| 151/158 [00:24<00:01,  4.42it/s][A[A
+
+Training Batches:  96%|█████████▌| 152/158 [00:24<00:01,  4.46it/s][A[A
+
+Training Batches:  97%|█████████▋| 153/158 [00:24<00:01,  4.25it/s][A[A
+
+Training Batches:  97%|█████████▋| 154/158 [00:25<00:00,  4.15it/s][A[A
+
+Training Batches:  98%|█████████▊| 155/158 [00:25<00:00,  4.24it/s][A[A
+
+Training Batches:  99%|█████████▊| 156/158 [00:25<00:00,  4.23it/s][A[A
+
+Training Batches:  99%|█████████▉| 157/158 [00:25<00:00,  4.08it/s][A[A
+
+Training Batches: 100%|██████████| 158/158 [00:25<00:00,  4.03it/s][A[A
+
+                                                                   [A[A
+
+Evaluating accuracy:   0%|          | 0/158 [00:00<?, ?it/s][A[A
+
+Evaluating accuracy:   6%|▌         | 9/158 [00:00<00:01, 78.00it/s][A[A
+
+Evaluating accuracy:  11%|█         | 17/158 [00:00<00:04, 33.22it/s][A[A
+
+Evaluating accuracy:  14%|█▍        | 22/158 [00:00<00:04, 30.05it/s][A[A
+
+Evaluating accuracy:  16%|█▋        | 26/158 [00:00<00:04, 28.22it/s][A[A
+
+Evaluating accuracy:  19%|█▉        | 30/158 [00:00<00:04, 28.86it/s][A[A
+
+Evaluating accuracy:  22%|██▏       | 34/158 [00:01<00:04, 29.06it/s][A[A
+
+Evaluating accuracy:  24%|██▍       | 38/158 [00:01<00:04, 28.35it/s][A[A
+
+Evaluating accuracy:  26%|██▌       | 41/158 [00:01<00:04, 27.82it/s][A[A
+
+Evaluating accuracy:  29%|██▉       | 46/158 [00:01<00:03, 31.43it/s][A[A
+
+Evaluating accuracy:  32%|███▏      | 50/158 [00:01<00:03, 33.31it/s][A[A
+
+Evaluating accuracy:  34%|███▍      | 54/158 [00:01<00:03, 31.48it/s][A[A
+
+Evaluating accuracy:  37%|███▋      | 58/158 [00:01<00:03, 30.60it/s][A[A
+
+Evaluating accuracy:  39%|███▉      | 62/158 [00:01<00:03, 30.37it/s][A[A
+
+Evaluating accuracy:  42%|████▏     | 66/158 [00:02<00:03, 30.08it/s][A[A
+
+Evaluating accuracy:  44%|████▍     | 70/158 [00:02<00:02, 29.55it/s][A[A
+
+Evaluating accuracy:  46%|████▌     | 73/158 [00:02<00:02, 28.86it/s][A[A
+
+Evaluating accuracy:  48%|████▊     | 76/158 [00:02<00:02, 27.75it/s][A[A
+
+Evaluating accuracy:  50%|█████     | 79/158 [00:02<00:02, 26.61it/s][A[A
+
+Evaluating accuracy:  52%|█████▏    | 82/158 [00:02<00:03, 24.53it/s][A[A
+
+Evaluating accuracy:  54%|█████▍    | 85/158 [00:02<00:02, 24.39it/s][A[A
+
+Evaluating accuracy:  56%|█████▌    | 88/158 [00:03<00:03, 23.12it/s][A[A
+
+Evaluating accuracy:  58%|█████▊    | 91/158 [00:03<00:03, 21.83it/s][A[A
+
+Evaluating accuracy:  59%|█████▉    | 94/158 [00:03<00:03, 19.56it/s][A[A
+
+Evaluating accuracy:  61%|██████▏   | 97/158 [00:03<00:03, 19.83it/s][A[A
+
+Evaluating accuracy:  63%|██████▎   | 100/158 [00:03<00:03, 17.83it/s][A[A
+
+Evaluating accuracy:  65%|██████▍   | 102/158 [00:03<00:03, 17.42it/s][A[A
+
+Evaluating accuracy:  66%|██████▌   | 104/158 [00:03<00:03, 17.31it/s][A[A
+
+Evaluating accuracy:  67%|██████▋   | 106/158 [00:04<00:03, 17.31it/s][A[A
+
+Evaluating accuracy:  68%|██████▊   | 108/158 [00:04<00:02, 17.37it/s][A[A
+
+Evaluating accuracy:  70%|██████▉   | 110/158 [00:04<00:02, 17.24it/s][A[A
+
+Evaluating accuracy:  71%|███████   | 112/158 [00:04<00:02, 17.26it/s][A[A
+
+Evaluating accuracy:  72%|███████▏  | 114/158 [00:04<00:02, 17.30it/s][A[A
+
+Evaluating accuracy:  73%|███████▎  | 116/158 [00:04<00:02, 17.42it/s][A[A
+
+Evaluating accuracy:  75%|███████▍  | 118/158 [00:04<00:02, 17.38it/s][A[A
+
+Evaluating accuracy:  76%|███████▌  | 120/158 [00:04<00:02, 17.27it/s][A[A
+
+Evaluating accuracy:  77%|███████▋  | 122/158 [00:05<00:02, 16.85it/s][A[A
+
+Evaluating accuracy:  78%|███████▊  | 124/158 [00:05<00:02, 16.77it/s][A[A
+
+Evaluating accuracy:  80%|███████▉  | 126/158 [00:05<00:01, 16.39it/s][A[A
+
+Evaluating accuracy:  81%|████████  | 128/158 [00:05<00:01, 16.28it/s][A[A
+
+Evaluating accuracy:  82%|████████▏ | 130/158 [00:05<00:01, 16.05it/s][A[A
+
+Evaluating accuracy:  84%|████████▎ | 132/158 [00:05<00:01, 15.90it/s][A[A
+
+Evaluating accuracy:  85%|████████▍ | 134/158 [00:05<00:01, 15.75it/s][A[A
+
+Evaluating accuracy:  86%|████████▌ | 136/158 [00:05<00:01, 15.53it/s][A[A
+
+Evaluating accuracy:  87%|████████▋ | 138/158 [00:06<00:01, 15.35it/s][A[A
+
+Evaluating accuracy:  89%|████████▊ | 140/158 [00:06<00:01, 15.19it/s][A[A
+
+Evaluating accuracy:  90%|████████▉ | 142/158 [00:06<00:01, 14.98it/s][A[A
+
+Evaluating accuracy:  91%|█████████ | 144/158 [00:06<00:01, 10.57it/s][A[A
+
+Evaluating accuracy:  92%|█████████▏| 146/158 [00:06<00:01, 11.48it/s][A[A
+
+Evaluating accuracy:  94%|█████████▎| 148/158 [00:06<00:00, 12.03it/s][A[A
+
+Evaluating accuracy:  95%|█████████▍| 150/158 [00:07<00:00, 12.39it/s][A[A
+
+Evaluating accuracy:  96%|█████████▌| 152/158 [00:07<00:00, 11.78it/s][A[A
+
+Evaluating accuracy:  97%|█████████▋| 154/158 [00:07<00:00, 11.87it/s][A[A
+
+Evaluating accuracy:  99%|█████████▊| 156/158 [00:07<00:00, 12.23it/s][A[A
+
+Evaluating accuracy: 100%|██████████| 158/158 [00:07<00:00, 12.25it/s][A[AEvaluating accuracy: 100%|██████████| 158/158 [00:07<00:00, 20.33it/s]
+
+
+Evaluating accuracy:   0%|          | 0/429 [00:00<?, ?it/s][A[A
+
+Evaluating accuracy:   3%|▎         | 14/429 [00:00<00:03, 135.01it/s][A[A
+
+Evaluating accuracy:   7%|▋         | 28/429 [00:00<00:05, 69.01it/s] [A[A
+
+Evaluating accuracy:   9%|▊         | 37/429 [00:00<00:09, 42.79it/s][A[A
+
+Evaluating accuracy:  10%|█         | 43/429 [00:00<00:10, 36.99it/s][A[A
+
+Evaluating accuracy:  11%|█         | 48/429 [00:01<00:10, 36.29it/s][A[A
+
+Evaluating accuracy:  12%|█▏        | 53/429 [00:01<00:10, 35.77it/s][A[A
+
+Evaluating accuracy:  13%|█▎        | 57/429 [00:01<00:10, 34.74it/s][A[A
+
+Evaluating accuracy:  14%|█▍        | 61/429 [00:01<00:11, 33.19it/s][A[A
+
+Evaluating accuracy:  15%|█▌        | 65/429 [00:01<00:11, 31.93it/s][A[A
+
+Evaluating accuracy:  16%|█▌        | 69/429 [00:01<00:11, 30.63it/s][A[A
+
+Evaluating accuracy:  17%|█▋        | 73/429 [00:01<00:12, 28.65it/s][A[A
+
+Evaluating accuracy:  18%|█▊        | 76/429 [00:02<00:12, 27.43it/s][A[A
+
+Evaluating accuracy:  18%|█▊        | 79/429 [00:02<00:13, 25.93it/s][A[A
+
+Evaluating accuracy:  19%|█▉        | 82/429 [00:02<00:13, 25.17it/s][A[A
+
+Evaluating accuracy:  20%|█▉        | 85/429 [00:02<00:13, 24.65it/s][A[A
+
+Evaluating accuracy:  21%|██        | 88/429 [00:02<00:13, 24.41it/s][A[A
+
+Evaluating accuracy:  21%|██        | 91/429 [00:02<00:14, 23.77it/s][A[A
+
+Evaluating accuracy:  22%|██▏       | 94/429 [00:02<00:14, 23.35it/s][A[A
+
+Evaluating accuracy:  23%|██▎       | 97/429 [00:03<00:14, 22.70it/s][A[A
+
+Evaluating accuracy:  23%|██▎       | 100/429 [00:03<00:15, 21.60it/s][A[A
+
+Evaluating accuracy:  24%|██▍       | 103/429 [00:03<00:15, 20.83it/s][A[A
+
+Evaluating accuracy:  25%|██▍       | 106/429 [00:03<00:16, 20.06it/s][A[A
+
+Evaluating accuracy:  25%|██▌       | 109/429 [00:03<00:16, 19.72it/s][A[A
+
+Evaluating accuracy:  26%|██▌       | 111/429 [00:03<00:16, 18.99it/s][A[A
+
+Evaluating accuracy:  26%|██▋       | 113/429 [00:03<00:16, 18.66it/s][A[A
+
+Evaluating accuracy:  27%|██▋       | 115/429 [00:04<00:17, 17.79it/s][A[A
+
+Evaluating accuracy:  27%|██▋       | 117/429 [00:04<00:17, 17.69it/s][A[A
+
+Evaluating accuracy:  28%|██▊       | 119/429 [00:04<00:18, 17.13it/s][A[A
+
+Evaluating accuracy:  28%|██▊       | 121/429 [00:04<00:17, 17.12it/s][A[A
+
+Evaluating accuracy:  29%|██▊       | 123/429 [00:04<00:18, 16.38it/s][A[A
+
+Evaluating accuracy:  29%|██▉       | 125/429 [00:04<00:18, 16.20it/s][A[A
+
+Evaluating accuracy:  30%|██▉       | 127/429 [00:04<00:18, 16.26it/s][A[A
+
+Evaluating accuracy:  30%|███       | 129/429 [00:04<00:18, 16.20it/s][A[A
+
+Evaluating accuracy:  31%|███       | 131/429 [00:05<00:18, 16.00it/s][A[A
+
+Evaluating accuracy:  31%|███       | 133/429 [00:05<00:18, 15.90it/s][A[A
+
+Evaluating accuracy:  31%|███▏      | 135/429 [00:05<00:18, 15.73it/s][A[A
+
+Evaluating accuracy:  32%|███▏      | 137/429 [00:05<00:18, 15.50it/s][A[A
+
+Evaluating accuracy:  32%|███▏      | 139/429 [00:05<00:19, 14.95it/s][A[A
+
+Evaluating accuracy:  33%|███▎      | 141/429 [00:05<00:19, 14.62it/s][A[A
+
+Evaluating accuracy:  33%|███▎      | 143/429 [00:05<00:19, 14.38it/s][A[A
+
+Evaluating accuracy:  34%|███▍      | 145/429 [00:05<00:20, 13.71it/s][A[A
+
+Evaluating accuracy:  34%|███▍      | 147/429 [00:06<00:21, 13.36it/s][A[A
+
+Evaluating accuracy:  35%|███▍      | 149/429 [00:06<00:22, 12.42it/s][A[A
+
+Evaluating accuracy:  35%|███▌      | 151/429 [00:06<00:23, 11.83it/s][A[A
+
+Evaluating accuracy:  36%|███▌      | 153/429 [00:06<00:24, 11.06it/s][A[A
+
+Evaluating accuracy:  36%|███▌      | 155/429 [00:06<00:25, 10.72it/s][A[A
+
+Evaluating accuracy:  37%|███▋      | 157/429 [00:07<00:27,  9.94it/s][A[A
+
+Evaluating accuracy:  37%|███▋      | 159/429 [00:07<00:29,  9.11it/s][A[A
+
+Evaluating accuracy:  37%|███▋      | 160/429 [00:07<00:30,  8.69it/s][A[A
+
+Evaluating accuracy:  38%|███▊      | 161/429 [00:07<00:31,  8.40it/s][A[A
+
+Evaluating accuracy:  38%|███▊      | 162/429 [00:07<00:32,  8.28it/s][A[A
+
+Evaluating accuracy:  38%|███▊      | 163/429 [00:07<00:31,  8.45it/s][A[A
+
+Evaluating accuracy:  38%|███▊      | 164/429 [00:08<00:30,  8.62it/s][A[A
+
+Evaluating accuracy:  38%|███▊      | 165/429 [00:08<00:30,  8.60it/s][A[A
+
+Evaluating accuracy:  39%|███▊      | 166/429 [00:08<00:31,  8.32it/s][A[A
+
+Evaluating accuracy:  39%|███▉      | 167/429 [00:08<00:33,  7.86it/s][A[A
+
+Evaluating accuracy:  39%|███▉      | 168/429 [00:08<00:34,  7.57it/s][A[A
+
+Evaluating accuracy:  39%|███▉      | 169/429 [00:08<00:33,  7.87it/s][A[A
+
+Evaluating accuracy:  40%|███▉      | 170/429 [00:08<00:35,  7.33it/s][A[A
+
+Evaluating accuracy:  40%|███▉      | 171/429 [00:09<00:35,  7.33it/s][A[A
+
+Evaluating accuracy:  40%|████      | 172/429 [00:09<00:38,  6.60it/s][A[A
+
+Evaluating accuracy:  40%|████      | 173/429 [00:09<00:37,  6.87it/s][A[A
+
+Evaluating accuracy:  41%|████      | 175/429 [00:09<00:30,  8.46it/s][A[A
+
+Evaluating accuracy:  41%|████      | 176/429 [00:09<00:32,  7.77it/s][A[A
+
+Evaluating accuracy:  41%|████▏     | 177/429 [00:09<00:34,  7.22it/s][A[A
+
+Evaluating accuracy:  41%|████▏     | 178/429 [00:09<00:35,  7.12it/s][A[A
+
+Evaluating accuracy:  42%|████▏     | 179/429 [00:10<00:34,  7.27it/s][A[A
+
+Evaluating accuracy:  42%|████▏     | 180/429 [00:10<00:32,  7.58it/s][A[A
+
+Evaluating accuracy:  42%|████▏     | 181/429 [00:10<00:33,  7.31it/s][A[A
+
+Evaluating accuracy:  42%|████▏     | 182/429 [00:10<00:35,  6.97it/s][A[A
+
+Evaluating accuracy:  43%|████▎     | 183/429 [00:10<00:37,  6.57it/s][A[A
+
+Evaluating accuracy:  43%|████▎     | 184/429 [00:10<00:35,  6.91it/s][A[A
+
+Evaluating accuracy:  43%|████▎     | 185/429 [00:10<00:37,  6.59it/s][A[A
+
+Evaluating accuracy:  43%|████▎     | 186/429 [00:11<00:36,  6.63it/s][A[A
+
+Evaluating accuracy:  44%|████▎     | 187/429 [00:11<00:37,  6.42it/s][A[A
+
+Evaluating accuracy:  44%|████▍     | 188/429 [00:11<00:35,  6.71it/s][A[A
+
+Evaluating accuracy:  44%|████▍     | 189/429 [00:11<00:34,  7.05it/s][A[A
+
+Evaluating accuracy:  44%|████▍     | 190/429 [00:11<00:31,  7.57it/s][A[A
+
+Evaluating accuracy:  45%|████▍     | 192/429 [00:11<00:28,  8.41it/s][A[A
+
+Evaluating accuracy:  45%|████▌     | 194/429 [00:12<00:25,  9.09it/s][A[A
+
+Evaluating accuracy:  46%|████▌     | 196/429 [00:12<00:24,  9.53it/s][A[A
+
+Evaluating accuracy:  46%|████▌     | 197/429 [00:12<00:25,  9.21it/s][A[A
+
+Evaluating accuracy:  46%|████▌     | 198/429 [00:12<00:25,  8.92it/s][A[A
+
+Evaluating accuracy:  46%|████▋     | 199/429 [00:12<00:25,  9.03it/s][A[A
+
+Evaluating accuracy:  47%|████▋     | 200/429 [00:12<00:25,  9.06it/s][A[A
+
+Evaluating accuracy:  47%|████▋     | 201/429 [00:12<00:27,  8.30it/s][A[A
+
+Evaluating accuracy:  47%|████▋     | 203/429 [00:13<00:25,  8.88it/s][A[A
+
+Evaluating accuracy:  48%|████▊     | 204/429 [00:13<00:24,  9.01it/s][A[A
+
+Evaluating accuracy:  48%|████▊     | 205/429 [00:13<00:25,  8.86it/s][A[A
+
+Evaluating accuracy:  48%|████▊     | 207/429 [00:13<00:24,  9.25it/s][A[A
+
+Evaluating accuracy:  48%|████▊     | 208/429 [00:13<00:24,  8.97it/s][A[A
+
+Evaluating accuracy:  49%|████▊     | 209/429 [00:13<00:23,  9.20it/s][A[A
+
+Evaluating accuracy:  49%|████▉     | 210/429 [00:13<00:23,  9.36it/s][A[A
+
+Evaluating accuracy:  49%|████▉     | 211/429 [00:13<00:23,  9.35it/s][A[A
+
+Evaluating accuracy:  49%|████▉     | 212/429 [00:14<00:24,  8.99it/s][A[A
+
+Evaluating accuracy:  50%|████▉     | 213/429 [00:14<00:23,  9.20it/s][A[A
+
+Evaluating accuracy:  50%|████▉     | 214/429 [00:14<00:22,  9.35it/s][A[A
+
+Evaluating accuracy:  50%|█████     | 215/429 [00:14<00:23,  9.12it/s][A[A
+
+Evaluating accuracy:  50%|█████     | 216/429 [00:14<00:23,  9.01it/s][A[A
+
+Evaluating accuracy:  51%|█████     | 217/429 [00:14<00:23,  9.18it/s][A[A
+
+Evaluating accuracy:  51%|█████     | 218/429 [00:14<00:22,  9.31it/s][A[A
+
+Evaluating accuracy:  51%|█████     | 219/429 [00:14<00:23,  9.05it/s][A[A
+
+Evaluating accuracy:  51%|█████▏    | 220/429 [00:14<00:23,  8.84it/s][A[A
+
+Evaluating accuracy:  52%|█████▏    | 221/429 [00:15<00:23,  9.02it/s][A[A
+
+Evaluating accuracy:  52%|█████▏    | 222/429 [00:15<00:22,  9.13it/s][A[A
+
+Evaluating accuracy:  52%|█████▏    | 223/429 [00:15<00:22,  9.14it/s][A[A
+
+Evaluating accuracy:  52%|█████▏    | 224/429 [00:15<00:22,  9.12it/s][A[A
+
+Evaluating accuracy:  52%|█████▏    | 225/429 [00:15<00:22,  9.02it/s][A[A
+
+Evaluating accuracy:  53%|█████▎    | 226/429 [00:15<00:22,  8.84it/s][A[A
+
+Evaluating accuracy:  53%|█████▎    | 227/429 [00:15<00:22,  8.92it/s][A[A
+
+Evaluating accuracy:  53%|█████▎    | 228/429 [00:15<00:22,  8.78it/s][A[A
+
+Evaluating accuracy:  53%|█████▎    | 229/429 [00:15<00:23,  8.61it/s][A[A
+
+Evaluating accuracy:  54%|█████▎    | 230/429 [00:16<00:22,  8.67it/s][A[A
+
+Evaluating accuracy:  54%|█████▍    | 231/429 [00:16<00:23,  8.49it/s][A[A
+
+Evaluating accuracy:  54%|█████▍    | 232/429 [00:16<00:23,  8.33it/s][A[A
+
+Evaluating accuracy:  54%|█████▍    | 233/429 [00:16<00:24,  7.90it/s][A[A
+
+Evaluating accuracy:  55%|█████▍    | 234/429 [00:16<00:24,  8.09it/s][A[A
+
+Evaluating accuracy:  55%|█████▍    | 235/429 [00:16<00:23,  8.32it/s][A[A
+
+Evaluating accuracy:  55%|█████▌    | 236/429 [00:16<00:24,  8.02it/s][A[A
+
+Evaluating accuracy:  55%|█████▌    | 237/429 [00:16<00:24,  7.97it/s][A[A
+
+Evaluating accuracy:  55%|█████▌    | 238/429 [00:17<00:24,  7.96it/s][A[A
+
+Evaluating accuracy:  56%|█████▌    | 239/429 [00:17<00:25,  7.45it/s][A[A
+
+Evaluating accuracy:  56%|█████▌    | 240/429 [00:17<00:25,  7.33it/s][A[A
+
+Evaluating accuracy:  56%|█████▌    | 241/429 [00:17<00:25,  7.27it/s][A[A
+
+Evaluating accuracy:  56%|█████▋    | 242/429 [00:17<00:25,  7.26it/s][A[A
+
+Evaluating accuracy:  57%|█████▋    | 243/429 [00:17<00:25,  7.29it/s][A[A
+
+Evaluating accuracy:  57%|█████▋    | 244/429 [00:17<00:25,  7.22it/s][A[A
+
+Evaluating accuracy:  57%|█████▋    | 245/429 [00:18<00:25,  7.17it/s][A[A
+
+Evaluating accuracy:  57%|█████▋    | 246/429 [00:18<00:25,  7.13it/s][A[A
+
+Evaluating accuracy:  58%|█████▊    | 247/429 [00:18<00:25,  7.15it/s][A[A
+
+Evaluating accuracy:  58%|█████▊    | 248/429 [00:18<00:24,  7.31it/s][A[A
+
+Evaluating accuracy:  58%|█████▊    | 249/429 [00:18<00:24,  7.32it/s][A[A
+
+Evaluating accuracy:  58%|█████▊    | 250/429 [00:18<00:24,  7.43it/s][A[A
+
+Evaluating accuracy:  59%|█████▊    | 251/429 [00:18<00:23,  7.43it/s][A[A
+
+Evaluating accuracy:  59%|█████▊    | 252/429 [00:19<00:23,  7.57it/s][A[A
+
+Evaluating accuracy:  59%|█████▉    | 253/429 [00:19<00:23,  7.42it/s][A[A
+
+Evaluating accuracy:  59%|█████▉    | 254/429 [00:19<00:22,  7.62it/s][A[A
+
+Evaluating accuracy:  59%|█████▉    | 255/429 [00:19<00:25,  6.94it/s][A[A
+
+Evaluating accuracy:  60%|█████▉    | 256/429 [00:19<00:24,  6.99it/s][A[A
+
+Evaluating accuracy:  60%|█████▉    | 257/429 [00:19<00:24,  6.92it/s][A[A
+
+Evaluating accuracy:  60%|██████    | 258/429 [00:19<00:25,  6.79it/s][A[A
+
+Evaluating accuracy:  60%|██████    | 259/429 [00:20<00:27,  6.25it/s][A[A
+
+Evaluating accuracy:  61%|██████    | 260/429 [00:20<00:28,  5.86it/s][A[A
+
+Evaluating accuracy:  61%|██████    | 261/429 [00:20<00:28,  5.82it/s][A[A
+
+Evaluating accuracy:  61%|██████    | 262/429 [00:20<00:26,  6.20it/s][A[A
+
+Evaluating accuracy:  61%|██████▏   | 263/429 [00:20<00:27,  5.94it/s][A[A
+
+Evaluating accuracy:  62%|██████▏   | 264/429 [00:20<00:27,  6.04it/s][A[A
+
+Evaluating accuracy:  62%|██████▏   | 265/429 [00:21<00:26,  6.09it/s][A[A
+
+Evaluating accuracy:  62%|██████▏   | 266/429 [00:21<00:27,  5.89it/s][A[A
+
+Evaluating accuracy:  62%|██████▏   | 267/429 [00:21<00:27,  5.97it/s][A[A
+
+Evaluating accuracy:  62%|██████▏   | 268/429 [00:21<00:25,  6.25it/s][A[A
+
+Evaluating accuracy:  63%|██████▎   | 269/429 [00:21<00:24,  6.43it/s][A[A
+
+Evaluating accuracy:  63%|██████▎   | 270/429 [00:21<00:24,  6.43it/s][A[A
+
+Evaluating accuracy:  63%|██████▎   | 271/429 [00:22<00:24,  6.46it/s][A[A
+
+Evaluating accuracy:  63%|██████▎   | 272/429 [00:22<00:23,  6.58it/s][A[A
+
+Evaluating accuracy:  64%|██████▎   | 273/429 [00:22<00:23,  6.74it/s][A[A
+
+Evaluating accuracy:  64%|██████▍   | 274/429 [00:22<00:23,  6.73it/s][A[A
+
+Evaluating accuracy:  64%|██████▍   | 275/429 [00:22<00:22,  6.80it/s][A[A
+
+Evaluating accuracy:  64%|██████▍   | 276/429 [00:22<00:23,  6.46it/s][A[A
+
+Evaluating accuracy:  65%|██████▍   | 277/429 [00:22<00:23,  6.45it/s][A[A
+
+Evaluating accuracy:  65%|██████▍   | 278/429 [00:23<00:23,  6.45it/s][A[A
+
+Evaluating accuracy:  65%|██████▌   | 279/429 [00:23<00:23,  6.28it/s][A[A
+
+Evaluating accuracy:  65%|██████▌   | 280/429 [00:23<00:23,  6.40it/s][A[A
+
+Evaluating accuracy:  66%|██████▌   | 281/429 [00:23<00:25,  5.88it/s][A[A
+
+Evaluating accuracy:  66%|██████▌   | 282/429 [00:23<00:25,  5.73it/s][A[A
+
+Evaluating accuracy:  66%|██████▌   | 283/429 [00:23<00:24,  5.96it/s][A[A

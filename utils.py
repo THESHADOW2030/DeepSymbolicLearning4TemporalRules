@@ -9,6 +9,7 @@ import numpy as np
 from pythomata import SimpleDFA, SymbolicAutomaton
 import math
 import torch.nn.functional as F
+from tqdm import tqdm
 
 if torch.cuda.is_available():
     device = 'cuda:0'
@@ -59,7 +60,8 @@ def eval_accuracy(classifier, deepAutoma, X, y, temp=1, automa_implementation = 
             batch_image_dataset = X[start:end].to(device)
             batch_acceptance = y[start:end].to(device)
         '''
-        for i in range(len(X)):
+        for i in tqdm(range(len(X)), desc="Evaluating accuracy"):
+          
           image_dataset = X[i].to(device)
           acceptance_dataset = y[i].to(device)
           tot_size = len(acceptance_dataset)
@@ -122,7 +124,7 @@ def eval_acceptance(classifier, automa, final_states, dfa, alphabet, dataset, au
     classifier.eval()
 
     with torch.no_grad():
-        for i in range(len(dataset[0])):
+        for i in tqdm(range(len(dataset[0])), desc="Evaluating acceptance"):
             images = dataset[0][i].to(device)
             label = dataset[1][i]
             # primo modo usando la lstm o l'automa continuo
