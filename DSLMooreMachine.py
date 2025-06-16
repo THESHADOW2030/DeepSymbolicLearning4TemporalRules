@@ -22,7 +22,7 @@ else:
 #import torchvision.ops.focal_loss as crossentropy
 
 class DSLMooreMachine:
-    def __init__(self, ltl_formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, num_of_symbols, num_of_states, dataset='MNIST', automa_implementation = 'logic_circuit', num_exp=0,log_dir="Results/",  automata_dir= "Automata/", models_dir= "Models"):
+    def __init__(self, ltl_formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, num_of_symbols, num_of_states, dataset='MNIST', automa_implementation = 'logic_circuit', num_exp=0,log_dir="Results/",  automata_dir= "Automata/", models_dir= "Models", num_labels=10):
         self.log_dir = log_dir
         self.automata_dir = automata_dir
         self.models_dir = models_dir
@@ -31,6 +31,7 @@ class DSLMooreMachine:
         self.formula_name = formula_name
         self.dfa = dfa
         self.mutually_exclusive = True
+        self.num_labels = num_labels
         #save the dfa image
         try:
             self.dfa.to_graphviz().render(self.automata_dir+self.formula_name)
@@ -81,7 +82,7 @@ class DSLMooreMachine:
             self.classifier = CNN_mnist(self.num_channels, self.numb_of_symbols, nodes_linear)
 
 
-            self.num_outputs = 10
+            self.num_outputs = self.num_labels
 
 
 

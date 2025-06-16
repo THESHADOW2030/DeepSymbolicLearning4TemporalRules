@@ -18,8 +18,9 @@ from contextlib import redirect_stdout
 import datetime
 
 #flags
-absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 5, "number of symbols used to initialize the model")
-absl.flags.DEFINE_integer("NUM_OF_STATES", 25, "number of states used to initialize the model") #TODO: rimettere a 25 
+absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 25, "number of symbols used to initialize the model")
+absl.flags.DEFINE_integer("NUM_OF_STATES", 50, "number of states used to initialize the model") #TODO: rimettere a 25 
+absl.flags.DEFINE_integer("NUM_LABELS", 10, "number of labels in the dataset, used to quantize the labels")
 
 absl.flags.DEFINE_string("LOG_DIR", "Results_mario/", "path to save the results")
 absl.flags.DEFINE_string("PLOTS_DIR", "Plots_mario/", "path to save the plots")
@@ -32,12 +33,12 @@ FLAGS = absl.flags.FLAGS
 
 def test_method(automa_implementation, formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, num_exp, epochs=500, log_dir="Results/", models_dir="Modles/", automata_dir="Automata/"):
     if automa_implementation == "logic_circuit":
-        model = DSLMooreMachine(formula, formula_name, dfa, symbolic_dataset,image_seq_dataset, FLAGS.NUM_OF_SYMBOLS, FLAGS.NUM_OF_STATES, dataset="mario", automa_implementation= automa_implementation, num_exp=num_exp, log_dir=log_dir, models_dir=models_dir, automata_dir=automata_dir)
+        model = DSLMooreMachine(formula, formula_name, dfa, symbolic_dataset,image_seq_dataset, FLAGS.NUM_OF_SYMBOLS, FLAGS.NUM_OF_STATES, dataset="mario", automa_implementation= automa_implementation, num_exp=num_exp, log_dir=log_dir, models_dir=models_dir, automata_dir=automata_dir, num_labels=FLAGS.NUM_LABELS)
     else:
         if automa_implementation == 'transformer':
-            model = DSLMooreMachine(formula, formula_name, dfa, symbolic_dataset,image_seq_dataset, FLAGS.NUM_OF_SYMBOLS, FLAGS.NUM_OF_STATES + 2, dataset="mario",  automa_implementation= automa_implementation, num_exp=num_exp, log_dir=log_dir, models_dir=models_dir)
+            model = DSLMooreMachine(formula, formula_name, dfa, symbolic_dataset,image_seq_dataset, FLAGS.NUM_OF_SYMBOLS, FLAGS.NUM_OF_STATES + 2, dataset="mario",  automa_implementation= automa_implementation, num_exp=num_exp, log_dir=log_dir, models_dir=models_dir, num_labels=FLAGS.NUM_LABELS)
         else:
-            model = DSLMooreMachine(formula, formula_name, dfa, symbolic_dataset,image_seq_dataset, FLAGS.NUM_OF_SYMBOLS, FLAGS.NUM_OF_STATES, dataset="mario",  automa_implementation= automa_implementation, num_exp=num_exp, log_dir=log_dir, models_dir=models_dir)
+            model = DSLMooreMachine(formula, formula_name, dfa, symbolic_dataset,image_seq_dataset, FLAGS.NUM_OF_SYMBOLS, FLAGS.NUM_OF_STATES, dataset="mario",  automa_implementation= automa_implementation, num_exp=num_exp, log_dir=log_dir, models_dir=models_dir, num_labels=FLAGS.NUM_LABELS)
 
     model.train_all(epochs)
 
@@ -101,16 +102,18 @@ def main(argv):
         print("Number of states must be at least 4. Setting to 4.")
         FLAGS.NUM_OF_STATES = 4
 
+    print(f"Number of symbols: {FLAGS.NUM_OF_SYMBOLS}, Number of states: {FLAGS.NUM_OF_STATES}")
 
 
+    now = datetime.datetime.now()
     with tqdm(range(num_exp)) as pbar:
         for i in pbar:
             set_seed(9+i)
             
-            now = datetime.datetime.now()
+            
             print(f"Experiment {i}/{num_exp - 1} started at {now.strftime('%Y-%m-%d--%H:%M:%S')}")
 
-            log_dir = FLAGS.LOG_DIR + now.strftime('%Y-%m-%d--%H:%M:%S') + f"_Symbols{FLAGS.NUM_OF_SYMBOLS}_States{FLAGS.NUM_OF_STATES}" "/"
+            log_dir = FLAGS.LOG_DIR + f"NUM_LABEL_{FLAGS.NUM_LABELS}/" + now.strftime('%Y-%m-%d--%H:%M:%S') + f"_Symbols{FLAGS.NUM_OF_SYMBOLS}_States{FLAGS.NUM_OF_STATES}" "/"
             if not os.path.isdir(log_dir):
                 os.makedirs(log_dir, exist_ok=True)
             pbar.set_description(f"Experiment {i}/{num_exp - 1} started at {now.strftime('%Y-%m-%d %H:%M:%S')}")
@@ -121,17 +124,29 @@ def main(argv):
             #DeepDFA
             test_method("logic_circuit", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, automata_dir=FLAGS.AUTOMATA_DIR, models_dir=FLAGS.MODELS_DIR)
             #lstm
-            #test_method("lstm", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
+            test_method("lstm", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
             #gru
-            #test_method("gru", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
+            test_method("gru", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
             #transformers
             test_method("transformer", formula, formula_name, dfa, symbolic_dataset, image_seq_dataset, i, log_dir=log_dir, models_dir=FLAGS.MODELS_DIR)
     
-    now = datetime.datetime.now()
+    
     print(f"All experiments completed at {now.strftime('%Y-%m-%d--%H:%M:%S')}")
     print("Plotting results...")
-    plot_dir = FLAGS.PLOTS_DIR + now.strftime('%Y-%m-%d--%H:%M:%S') + f"_Symbols{FLAGS.NUM_OF_SYMBOLS}_States{FLAGS.NUM_OF_STATES}" "/"
-    plot_results(formula, formula_name, res_dir = log_dir,num_exp=num_exp, plot_legend=True, plot_dir= FLAGS.PLOTS_DIR, aut_dir=FLAGS.AUTOMATA_DIR, state_count=6, symbol_count=4)
+
+    plot_dir = FLAGS.PLOTS_DIR + f"NUM_LABEL_{FLAGS.NUM_LABELS}/" + now.strftime('%Y-%m-%d--%H:%M:%S') + f"_Symbols{FLAGS.NUM_OF_SYMBOLS}_States{FLAGS.NUM_OF_STATES}" "/"
+    if not os.path.isdir(plot_dir):
+        os.makedirs(plot_dir, exist_ok=True)
+    
+    automata_dir = FLAGS.AUTOMATA_DIR + f"NUM_LABEL_{FLAGS.NUM_LABELS}/" + now.strftime('%Y-%m-%d--%H:%M:%S') + f"_Symbols{FLAGS.NUM_OF_SYMBOLS}_States{FLAGS.NUM_OF_STATES}" "/"
+    if not os.path.isdir(automata_dir):
+        os.makedirs(automata_dir, exist_ok=True)
+    models_dir = FLAGS.MODELS_DIR + f"NUM_LABEL_{FLAGS.NUM_LABELS}/" + now.strftime('%Y-%m-%d--%H:%M:%S') + f"_Symbols{FLAGS.NUM_OF_SYMBOLS}_States{FLAGS.NUM_OF_STATES}" "/"
+    if not os.path.isdir(models_dir):
+        os.makedirs(models_dir, exist_ok=True)
+
+    plot_results_all_formulas(formulas, formulas_names, max_length_traces, log_dir=log_dir, num_exp=num_exp, plot_legend=plot_legend, plot_dir=plot_dir, aut_dir=automata_dir, state_count=FLAGS.NUM_OF_STATES, symbol_count=FLAGS.NUM_OF_SYMBOLS)
+
 
 if __name__ == '__main__':
     absl.app.run(main)

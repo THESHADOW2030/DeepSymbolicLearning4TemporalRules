@@ -206,12 +206,140 @@ def loadMarioDataset_balanced_labels(root_dir, num_outputs=5, transform=None):
     return img_seq_train_batch_bal, acceptance_train_batch_bal
 
 
-#############################################################################################################################################################
+def quantize_labels(path, num_outputs=20):
+    """
+    Quantizes labels in the dataset to a fixed number of outputs.
+    """
+    unique_labels = set()
+    for folder in os.listdir(path):
+        folder_path = os.path.join(path, folder)
+        if not os.path.isdir(folder_path):
+            continue
+        for episode in os.listdir(folder_path):
+            episode_path = os.path.join(folder_path, episode)
+            if not os.path.isdir(episode_path):
+                continue
+            for file in os.listdir(episode_path):
+                if "_" in file and "." in file:
+                    label = int(file.split("_")[1].split(".")[0])
+                    unique_labels.add(label)
+
+    # Create a mapping from original labels to new labels that range from 0 to num_outputs-1. Divide the sorted unique labels into num_outputs bins.
+    unique_labels = sorted(unique_labels)
+    bin_size = len(unique_labels) // num_outputs
+    label_mapping = {}
+    for i, label in enumerate(unique_labels):
+        new_label = i // bin_size
+        if new_label >= num_outputs:
+            new_label = num_outputs - 1  # Ensure we don't exceed the number of outputs
+        label_mapping[label] = new_label
+    print("Label mapping:", label_mapping)
+
+    #print the distribution of the bins
+    label_distribution = {i: 0 for i in range(num_outputs)}
+    for label in unique_labels:
+        new_label = label_mapping[label]
+        label_distribution[new_label] += 1
+    print("Label distribution after quantization:", label_distribution)
+
+    # Rename files in the dataset according to the new label mapping
+    for folder in os.listdir(path):
+        folder_path = os.path.join(path, folder)
+        if not os.path.isdir(folder_path):
+            continue
+        for episode in os.listdir(folder_path):
+            episode_path = os.path.join(folder_path, episode)
+            if not os.path.isdir(episode_path):
+                continue
+            for file in os.listdir(episode_path):
+                if "_" in file and "." in file:
+                    label = int(file.split("_")[1].split(".")[0])
+                    new_label = label_mapping[label]
+                    new_file_name = f"img{file.split('_')[0]}_{new_label}.png"
+                    old_file_path = os.path.join(episode_path, file)
+                    new_file_path = os.path.join(episode_path, new_file_name)
+                    os.rename(old_file_path, new_file_path)
+                    #print(f"Renamed {old_file_path} to {new_file_path}")
+    # Print the final label distribution
+    final_label_distribution = {i: 0 for i in range(num_outputs)}
+    print("Label quantization complete.")
+
+import os
+import random
+from collections import defaultdict
+
+import os
+import shutil
+import random
+
+def balance_labels_new(path):
+    # 1. Calculate overall label distribution
+    label_distribution = {}
 
 
+
+
+    for episode in os.listdir(path):
+        episode_path = os.path.join(path, episode)
+        if not os.path.isdir(episode_path):
+            continue
+        for file in os.listdir(episode_path):
+            if "_" in file and "." in file:
+                label = int(file.split("_")[1].split(".")[0])
+                label_distribution[label] = label_distribution.get(label, 0) + 1
+    print("Initial label distribution:", label_distribution)
+
+    # 2. Build per-episode label distributions
+    episode_label_distribution = {}
+    episode_file_map = {}  # Store file paths per label per episode
+
+    for episode in os.listdir(path):
+        episode_path = os.path.join(path, episode)
+        if not os.path.isdir(episode_path):
+            continue
+        episode_distribution = {}
+        file_map = {}
+        for file in os.listdir(episode_path):
+            if "_" in file and "." in file:
+                label = int(file.split("_")[1].split(".")[0])
+                episode_distribution[label] = episode_distribution.get(label, 0) + 1
+                file_map.setdefault(label, []).append(os.path.join(episode_path, file))
+        episode_label_distribution[episode] = episode_distribution
+        episode_file_map[episode] = file_map
+
+    print("Episode label distribution:", episode_label_distribution)
+
+    # 3. Determine target count per label (e.g., minimum across all episodes with that label)
+    label_min_counts = {}
+    for label in label_distribution:
+        label_min = float('inf')
+        for episode, dist in episode_label_distribution.items():
+            if label in dist:
+                label_min = min(label_min, dist[label])
+        if label_min != float('inf'):
+            label_min_counts[label] = label_min
+
+    print("Target label count per episode:", label_min_counts)
+
+    # 4. Subsample files in each episode to match the label_min_counts
+    for episode, file_map in episode_file_map.items():
+        for label, files in file_map.items():
+            total = len(files)
+            keep_count = label_min_counts.get(label, 0)
+
+            # Ensure we keep at least one sample if it exists
+            keep_count = max(1, min(keep_count, total))
+
+            if total > keep_count:
+                to_remove = random.sample(files, total - keep_count)
+                for f in to_remove:
+                    os.remove(f)
 if __name__ == "__main__":
 
-    move_dataset_to_right_folder()
-    balance_labels()
+    for number in [20, 30, 50, 70, 100]:
+
+        quantize_labels(f"./observation_clean_labels_{number}/", num_outputs=number)
+        balance_labels_new(path = f"./observation_clean_labels_{number}/Train")
+        balance_labels_new(path = f"./observation_clean_labels_{number}/Test")
 
     pass
