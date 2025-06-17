@@ -18,8 +18,8 @@ from contextlib import redirect_stdout
 import datetime
 
 #flags
-absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 25, "number of symbols used to initialize the model")
-absl.flags.DEFINE_integer("NUM_OF_STATES", 50, "number of states used to initialize the model") #TODO: rimettere a 25 
+absl.flags.DEFINE_integer("NUM_OF_SYMBOLS", 10, "number of symbols used to initialize the model")
+absl.flags.DEFINE_integer("NUM_OF_STATES", 100, "number of states used to initialize the model") #TODO: rimettere a 25 
 absl.flags.DEFINE_integer("NUM_LABELS", 10, "number of labels in the dataset, used to quantize the labels")
 
 absl.flags.DEFINE_string("LOG_DIR", "Results_mario/", "path to save the results")

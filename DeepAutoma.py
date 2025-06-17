@@ -36,9 +36,9 @@ class ProbabilisticAutoma(nn.Module):
         self.reward_values = torch.Tensor(list(range(numb_of_rewards)))
         self.activation = sftmx_with_temp
         #TODO: rimettere stdev a 0.1
-        self.trans_prob = torch.normal(0, 0.5, size=( numb_of_actions, numb_of_states, numb_of_states), requires_grad=True, device=device)
+        self.trans_prob = torch.normal(0, 1, size=( numb_of_actions, numb_of_states, numb_of_states), requires_grad=True, device=device)
 
-        self.rew_matrix = torch.normal(0, 0.5, size=( numb_of_states, numb_of_rewards), requires_grad=True, device=device)
+        self.rew_matrix = torch.normal(0, 1, size=( numb_of_states, numb_of_rewards), requires_grad=True, device=device)
 
 
     #input: sequence of actions (batch, length_seq, num_of_actions)
@@ -216,10 +216,10 @@ class ProbabilisticAutoma(nn.Module):
             trans[s] = {}
         acc = []
         for i, rew in enumerate(rew_matrix):
-                if rew == 0:
-                    acc.append(False)
-                else:
+                if rew == 9:    #nel caso del dataset quantizzato a 10, il 9 è la label finale 
                     acc.append(True)
+                else:
+                    acc.append(False)
         for a in range(trans_prob.size()[0]):
             for s, s_prime in enumerate(trans_prob[a]):
                     trans[s][str(a)] = s_prime.item()
